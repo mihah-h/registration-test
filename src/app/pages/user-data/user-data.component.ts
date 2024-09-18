@@ -16,14 +16,14 @@ import { RegistrationUser } from '../../core/models/registrationUser';
   styleUrl: './user-data.component.scss'
 })
 export class UserDataComponent implements OnInit{
-  user!: RegistrationUser;
+  public user!: RegistrationUser;
 
   constructor(
     private auth: AuthService,
     private router: Router,
   ) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (this.auth.currentUser) {
       this.user = JSON.parse(this.auth.currentUser);
     }

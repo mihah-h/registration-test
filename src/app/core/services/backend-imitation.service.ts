@@ -1,6 +1,6 @@
+import { delay, map, Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { RegistrationUser } from '../models/registrationUser';
-import { delay, map, Observable, of } from 'rxjs';
 import { AuthorizationUser } from '../models/authorizationUser';
 
 @Injectable({
@@ -10,12 +10,12 @@ export class BackendImitationService {
 
   constructor() { }
 
-  registerUser(user: RegistrationUser): Observable<boolean> {
+  public registerUser(user: RegistrationUser): Observable<boolean> {
     localStorage.setItem(user.email, JSON.stringify(user));
     return of(true).pipe(delay(1000));
   }
 
-  authUser(user: AuthorizationUser): Observable<RegistrationUser | null> {
+  public authUser(user: AuthorizationUser): Observable<RegistrationUser | null> {
     return of(null).pipe(delay(1000), map(() => {
       const storedUser = JSON.parse(localStorage.getItem(user.email) || '{}') as RegistrationUser;
 

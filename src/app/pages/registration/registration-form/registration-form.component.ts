@@ -35,9 +35,9 @@ export class RegistrationFormComponent {
 
   public registrationForm!: FormGroup;
 
-  @Output() registrationFormSent = new EventEmitter<RegistrationUser>();
+  @Output() public registrationFormSent = new EventEmitter<RegistrationUser>();
 
-  matcher = new ErrorStateMatcher();
+  public matcher = new ErrorStateMatcher();
 
   constructor(private router: Router) {}
 
@@ -73,7 +73,7 @@ export class RegistrationFormComponent {
     return this.registrationForm.controls['gender'] as FormControl
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.registrationForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
@@ -88,7 +88,7 @@ export class RegistrationFormComponent {
     });
   }
 
-  onSubmitRegistrationForm() {
+  public onSubmitRegistrationForm() {
     const registrationUser: RegistrationUser = {
       email: this.registrationForm.value.email,
       password: this.registrationForm.value.password,
@@ -109,7 +109,7 @@ export class RegistrationFormComponent {
     event.stopPropagation();
   }
 
-  goToAuthPage() {
+  public goToAuthPage() {
     this.registrationForm.reset()
     this.router.navigate(['/'])
   }

@@ -24,7 +24,7 @@ export class RegistrationComponent {
     private auth: AuthService,
     private router: Router,
   ) {}
-  registerUser(user: RegistrationUser) {
+  public registerUser(user: RegistrationUser) {
     this.auth.register(user).pipe(takeUntilDestroyed(this._destroyRef)).subscribe(() => {
       this.router.navigate(['/'])
     })

@@ -33,7 +33,7 @@ export class AuthorizationComponent {
     private auth: AuthService,
     private router: Router,
   ) {}
-  authorizeUser(user: AuthorizationUser) {
+  public authorizeUser(user: AuthorizationUser) {
     this.auth.login(user).pipe(
       takeUntilDestroyed(this._destroyRef)
     ).subscribe((user) => {

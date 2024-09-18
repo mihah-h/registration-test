@@ -1,7 +1,7 @@
+import { Observable, of, switchMap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AuthorizationUser } from '../models/authorizationUser';
 import { RegistrationUser } from '../models/registrationUser';
-import { Observable, of, switchMap } from 'rxjs';
 import { BackendImitationService } from './backend-imitation.service';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class AuthService {
     return localStorage.getItem('currentUser')
   }
 
-  login(authUser: AuthorizationUser): Observable<RegistrationUser | null> {
+  public login(authUser: AuthorizationUser): Observable<RegistrationUser | null> {
     return this.backendImitation.authUser(authUser).pipe(
       switchMap((user) => {
         if (user) {
@@ -26,15 +26,15 @@ export class AuthService {
     );
   }
 
-  register(user: RegistrationUser): Observable<boolean> {
+  public register(user: RegistrationUser): Observable<boolean> {
     return this.backendImitation.registerUser(user);
   }
 
-  logout() {
+  public logout() {
     this.setUser(null)
   }
 
-  isAuthenticated(): boolean {
+  public isAuthenticated(): boolean {
     return !!this.currentUser
   }
 

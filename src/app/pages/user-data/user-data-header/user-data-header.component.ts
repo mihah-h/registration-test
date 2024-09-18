@@ -12,5 +12,5 @@ import { MatButton } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserDataHeaderComponent {
-  @Output() exit = new EventEmitter();
+  @Output() public exit = new EventEmitter();
 }

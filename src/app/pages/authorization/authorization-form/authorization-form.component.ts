@@ -32,9 +32,9 @@ import { AuthorizationUser } from '../../../core/models/authorizationUser';
 export class AuthorizationFormComponent implements OnInit {
   public authorizationForm!: FormGroup;
 
-  @Output() authorizationFormSent = new EventEmitter<AuthorizationUser>();
+  @Output() public authorizationFormSent = new EventEmitter<AuthorizationUser>();
 
-  matcher = new ErrorStateMatcher();
+  public matcher = new ErrorStateMatcher();
 
   constructor(private router: Router) {}
 
@@ -62,12 +62,12 @@ export class AuthorizationFormComponent implements OnInit {
   }
 
   hide = signal(true);
-  clickEvent(event: MouseEvent) {
+  public clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
 
-  goToRegisterPage() {
+  public goToRegisterPage() {
     this.authorizationForm.reset()
     this.router.navigate(['/registration'])
   }
