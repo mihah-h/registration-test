@@ -1,8 +1,8 @@
-import { Component, Output, signal, EventEmitter } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatError, MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
 import { ErrorStateMatcher, MatOption, provideNativeDateAdapter } from '@angular/material/core';
 import { MatButton, MatIconButton } from '@angular/material/button';
-import { MatError, MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { RegistrationUser } from '../../../core/models/registrationUser';
@@ -29,7 +29,8 @@ import { Router } from '@angular/router';
     MatOption
   ],
   templateUrl: './registration-form.component.html',
-  styleUrl: './registration-form.component.scss'
+  styleUrl: './registration-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationFormComponent {
 

@@ -1,8 +1,8 @@
 import { Component, DestroyRef, inject } from '@angular/core';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormField } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { AuthorizationFormComponent } from './authorization-form/authorization-form.component';
 import { AuthorizationUser } from '../../core/models/authorizationUser';

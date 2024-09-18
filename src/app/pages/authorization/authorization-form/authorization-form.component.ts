@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, signal, EventEmitter } from '@angular/core';
 import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
 import { MatError, MatFormField, MatHint, MatLabel, MatSuffix } from '@angular/material/form-field';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthorizationUser } from '../../../core/models/authorizationUser';
