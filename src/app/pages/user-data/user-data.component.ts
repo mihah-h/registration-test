@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RegistrationFormComponent } from '../registration/registration-form/registration-form.component';
 import { UserDataHeaderComponent } from './user-data-header/user-data-header.component';
 import { AuthService } from '../../core/services/auth.service';
@@ -28,7 +28,6 @@ export class UserDataComponent implements OnInit{
       this.user = JSON.parse(this.auth.currentUser);
     }
   }
-
 
   public onExit() {
     this.auth.logout();

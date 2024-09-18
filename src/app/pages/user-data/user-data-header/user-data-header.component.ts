@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { AuthService } from '../../../core/services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-data-header',

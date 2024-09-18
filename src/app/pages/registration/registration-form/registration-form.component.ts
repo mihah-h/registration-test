@@ -1,15 +1,13 @@
 import { Component, Output, signal, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthorizationUser } from '../../../core/models/authorizationUser';
 import { ErrorStateMatcher, MatOption, provideNativeDateAdapter } from '@angular/material/core';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatError, MatFormField, MatLabel, MatSuffix } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { RegistrationUser } from '../../../core/models/registrationUser';
-import { MatDatepicker, MatDatepickerModule, MatDatepickerToggle } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelect } from '@angular/material/select';
-import { GenderForSelect } from '../../../core/models/genderForSelect';
 import { Router } from '@angular/router';
 
 @Component({
