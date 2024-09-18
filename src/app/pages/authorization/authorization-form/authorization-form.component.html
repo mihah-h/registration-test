@@ -16,6 +16,7 @@
     <button
       mat-icon-button
       matSuffix
+      type="button"
       (click)="clickEvent($event)"
       [attr.aria-label]="'Hide password'"
       [attr.aria-pressed]="hide()"
@@ -27,7 +28,7 @@
     }
   </mat-form-field>
   <div class="button-block">
-    <button mat-button (click)="goToRegisterPage()">Зарегистрироваться</button>
+    <button mat-button type="button" (click)="goToRegisterPage()">Зарегистрироваться</button>
     <button
       class="save-button"
       mat-flat-button
