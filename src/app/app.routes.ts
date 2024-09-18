@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './core/auth-guard.guard';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'user-data',
+    canActivate: [AuthGuard],
     loadComponent: () =>
       import('./pages/user-data/user-data.component').then((x) => x.UserDataComponent),
   },
