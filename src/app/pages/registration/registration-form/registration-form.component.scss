@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputs-block {
+  display: flex;
+  justify-content: space-between;
+
+  & .block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.button-block {
+  display: flex;
+  justify-content: space-between;
+}

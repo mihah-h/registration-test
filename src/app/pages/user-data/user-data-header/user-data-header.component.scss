@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  padding: 10px 20px;
+
+  & .button {
+    margin-right: 60px;
+  }
+}
