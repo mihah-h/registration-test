@@ -43,7 +43,7 @@ export class AuthorizationComponent {
         this.router.navigate(['/user-data'])
       }
       else {
-
+        alert('Такого пользователя не существует')
       }
     })
   }
