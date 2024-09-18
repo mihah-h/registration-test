@@ -47,31 +47,31 @@ export class RegistrationFormComponent {
   }
 
   get emailControl() {
-    return this.registrationForm.controls['email'] as FormControl
+    return this.registrationForm.controls['email'] as FormControl;
   }
 
   get passwordControl() {
-    return this.registrationForm.controls['password'] as FormControl
+    return this.registrationForm.controls['password'] as FormControl;
   }
 
   get passwordRepeatControl() {
-    return this.registrationForm.controls['passwordRepeat'] as FormControl
+    return this.registrationForm.controls['passwordRepeat'] as FormControl;
   }
 
   get nameControl() {
-    return this.registrationForm.controls['name'] as FormControl
+    return this.registrationForm.controls['name'] as FormControl;
   }
 
   get surnameRepeatControl() {
-    return this.registrationForm.controls['surname'] as FormControl
+    return this.registrationForm.controls['surname'] as FormControl;
   }
 
   get phoneNumberControl() {
-    return this.registrationForm.controls['phoneNumber'] as FormControl
+    return this.registrationForm.controls['phoneNumber'] as FormControl;
   }
 
   get genderControl() {
-    return this.registrationForm.controls['gender'] as FormControl
+    return this.registrationForm.controls['gender'] as FormControl;
   }
 
   public ngOnInit() {
@@ -100,8 +100,8 @@ export class RegistrationFormComponent {
       gender: this.registrationForm.value.gender,
       city: this.registrationForm.value.city,
       information: this.registrationForm.value.information,
-    }
-    this.registrationFormSent.emit(registrationUser)
+    };
+    this.registrationFormSent.emit(registrationUser);
   }
 
   hide = signal(true);
@@ -111,7 +111,7 @@ export class RegistrationFormComponent {
   }
 
   public goToAuthPage() {
-    this.registrationForm.reset()
-    this.router.navigate(['/'])
+    this.registrationForm.reset();
+    this.router.navigate(['/']);
   }
 }

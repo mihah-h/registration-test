@@ -1,11 +1,11 @@
 <app-user-data-header (exit)="onExit()"></app-user-data-header>
 <div class="wrapper mat-elevation-z8">
   <h5>Данные пользователя</h5>
-  <p>Имя и фамилия: {{user.name + ' ' + user.surname}}</p>
-  <p>Email: {{user.email}}</p>
-  <p>Телефон: {{user.phoneNumber}}</p>
-  <p>Дата рождения: {{user.birthDate}}</p>
-  <p>Пол: {{user.gender}}</p>
-  <p>Город проживания: {{user.city}}</p>
-  <p>Дополнительная информация: {{user.information}}</p>
+  <p>Имя и фамилия: {{userData.name + ' ' + userData.surname}}</p>
+  <p>Email: {{userData.email}}</p>
+  <p>Телефон: {{userData.phoneNumber}}</p>
+  <p>Дата рождения: {{userData.birthDate | date:'dd.MM.yyyy':'ru'}}</p>
+  <p>Пол: {{userData.gender}}</p>
+  <p>Город проживания: {{userData.city}}</p>
+  <p>Дополнительная информация: {{userData.information}}</p>
 </div>

@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit, Output, signal, EventEmitte
 import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
 import { MatError, MatFormField, MatHint, MatLabel, MatSuffix } from '@angular/material/form-field';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { Router, RouterLink } from '@angular/router';
 import { AuthorizationUser } from '../../../core/models/authorizationUser';
 
 @Component({
@@ -39,11 +39,11 @@ export class AuthorizationFormComponent implements OnInit {
   constructor(private router: Router) {}
 
   get emailControl() {
-    return this.authorizationForm.controls['email'] as FormControl
+    return this.authorizationForm.controls['email'] as FormControl;
   }
 
   get passwordControl() {
-    return this.authorizationForm.controls['password'] as FormControl
+    return this.authorizationForm.controls['password'] as FormControl;
   }
 
   public ngOnInit() {
@@ -57,8 +57,8 @@ export class AuthorizationFormComponent implements OnInit {
     const authorizationUser: AuthorizationUser = {
       email: this.authorizationForm.value.email,
       password: this.authorizationForm.value.password,
-    }
-    this.authorizationFormSent.emit(authorizationUser)
+    };
+    this.authorizationFormSent.emit(authorizationUser);
   }
 
   hide = signal(true);
@@ -68,7 +68,7 @@ export class AuthorizationFormComponent implements OnInit {
   }
 
   public goToRegisterPage() {
-    this.authorizationForm.reset()
-    this.router.navigate(['/registration'])
+    this.authorizationForm.reset();
+    this.router.navigate(['/registration']);
   }
 }

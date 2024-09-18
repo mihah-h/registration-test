@@ -1,4 +1,4 @@
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AuthorizationUser } from '../models/authorizationUser';
 import { RegistrationUser } from '../models/registrationUser';
@@ -12,35 +12,30 @@ export class AuthService {
   constructor(private backendImitation: BackendImitationService) {}
 
   get currentUser(): string | null {
-    return localStorage.getItem('currentUser')
+    return localStorage.getItem('currentUser');
   }
 
   public login(authUser: AuthorizationUser): Observable<RegistrationUser | null> {
     return this.backendImitation.authUser(authUser).pipe(
-      switchMap((user) => {
-        if (user) {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-        }
-        return of(user);
-      })
+      tap(this.setUser)
     );
   }
 
-  public register(user: RegistrationUser): Observable<boolean> {
+  public register(user: RegistrationUser): Observable<RegistrationUser> {
     return this.backendImitation.registerUser(user);
   }
 
   public logout() {
-    this.setUser(null)
+    this.setUser(null);
   }
 
   public isAuthenticated(): boolean {
-    return !!this.currentUser
+    return !!this.currentUser;
   }
 
   private setUser(response: RegistrationUser | null) {
     if (response) {
-      localStorage.setItem('currentUser', response.email)
+      localStorage.setItem('currentUser', response.email);
     } else {
       localStorage.removeItem('currentUser');
     }

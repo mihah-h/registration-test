@@ -1,9 +1,4 @@
 import { Component, DestroyRef, inject } from '@angular/core';
-import { MatButton, MatIconButton } from '@angular/material/button';
-import { MatFormField } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatIcon } from '@angular/material/icon';
 import { AuthorizationFormComponent } from './authorization-form/authorization-form.component';
 import { AuthorizationUser } from '../../core/models/authorizationUser';
 import { AuthService } from '../../core/services/auth.service';
@@ -13,15 +8,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-authorization',
   standalone: true,
-  imports: [
-    MatFormField,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatIconButton,
-    MatIcon,
-    MatButton,
-    AuthorizationFormComponent,
-  ],
+  imports: [AuthorizationFormComponent],
   templateUrl: './authorization.component.html',
   styleUrl: './authorization.component.scss'
 })
@@ -38,10 +25,10 @@ export class AuthorizationComponent {
       takeUntilDestroyed(this._destroyRef)
     ).subscribe((user) => {
       if (user) {
-        this.router.navigate(['/user-data'])
+        this.router.navigate(['/user-data']);
       }
       else {
-        alert('Такого пользователя не существует')
+        alert('Такого пользователя не существует');
       }
     })
   }
